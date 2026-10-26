@@ -25,6 +25,17 @@
       </visual>
     </link>
 
+    <!-- builtin imu -->
+    <!-- Taken from
+    https://github.com/unitreerobotics/unitree_ros/blob/master/robots/go2_description/urdf/go2_description.urdf#L728-L740. -->
+    <joint name="imu_joint" type="fixed">
+      <parent link="base_link" />
+      <child link="imu_frame" />
+      <origin xyz="-0.02557 0 0.04232" rpy="0 0 0" />
+    </joint>
+
+    <link name="imu_frame" />
+
     <!-- legs -->
     <xacro:leg name="front_left" front="1" left="1" />
     <xacro:leg name="front_right" front="1" left="-1" />
